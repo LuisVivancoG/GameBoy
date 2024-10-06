@@ -59,7 +59,7 @@ public class UIManager : MonoBehaviour
 
     private void UpdateChargesHUD()
     {
-        Debug.Log("Event Called");
+        //Debug.Log("Event Called");
         for (int i = 0; i < _chargesBoost.Length; i++)
         {
             _chargesBoost[i].enabled = (i < _currentcharges);

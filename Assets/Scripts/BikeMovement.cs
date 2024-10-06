@@ -105,13 +105,13 @@ public class BikeMovement : MonoBehaviour
     {
         _jumpQueued = true;
         _jumpQueueTimer = _jumpQueueTime;
-        Debug.Log("Jump queued");
+        //Debug.Log("Jump queued");
     }
 
     private void PerformJump()
     {
         _bodyBike.velocity = new Vector2(_bodyBike.velocity.x, _jumpForce);
-        Debug.Log("Jump performed");
+        //Debug.Log("Jump performed");
 
         _jumpQueued = false;
         _jumpQueueTimer = 0f;
@@ -120,8 +120,8 @@ public class BikeMovement : MonoBehaviour
     {
         if (_currentCharges > 0)
         {
-            Debug.Log("Boost used");
-            _backWheel.AddTorque(-_movementInput.x * _speed * Time.fixedDeltaTime;
+            _bodyBike.AddForce(transform.forward * _boostSpeed, ForceMode2D.Impulse);
+            Debug.Log("Boost used" + ForceMode2D.Impulse);
             _currentCharges--;
         }
         onPlayerBoosted?.Invoke();

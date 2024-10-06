@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
         _uiManager.TogglePause();
         if (_uiManager._paused)
         {
-            Debug.Log("Game paused");
+            //Debug.Log("Game paused");
             Time.timeScale = 0;
         }
 
@@ -70,6 +70,6 @@ public class GameManager : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);
-        Debug.Log("Select pressed");
+        //Debug.Log("Select pressed");
     }
 }
