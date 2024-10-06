@@ -7,7 +7,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _levelHUD;
     public bool _paused { get; private set; }
 
-    private int _currentcharges = 3;
+    private int _currentcharges;
     private int _maxCharges = 3;
     [SerializeField] private Image[] _chargesBoost;
 

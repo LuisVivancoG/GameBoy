@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: edf351322e21f7c47949def46501388a
+guid: 61b1bf89c89ef9c4990d93afd62035a3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1282489014570104194
-    second: Half Ramp R_0
+      213: -40536202942864063
+    second: Edge R_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,10 +46,10 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
-  alignment: 0
+  spriteMeshType: 0
+  alignment: 6
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
@@ -72,10 +72,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 64
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,12 +126,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Half Ramp R_0
+      name: Edge R_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 10
+        width: 20
         height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e7a4532490fa33ee0800000000000000
-      internalID: -1282489014570104194
+      spriteID: 1452c07c98cff6ff0800000000000000
+      internalID: -40536202942864063
       vertices: []
       indices: 
       edges: []
@@ -149,7 +149,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -157,7 +157,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Half Ramp R_0: -1282489014570104194
+      Edge R_0: -40536202942864063
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

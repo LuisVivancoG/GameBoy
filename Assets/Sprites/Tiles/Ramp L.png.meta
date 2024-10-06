@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6f00b01c8406f0741abcb7db96213f11
+guid: f9b5e3ecdbef3a0468974163cc00687a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9135414995656107146
-    second: Smooth Ramp L_0
+      213: 2830915758793414278
+    second: Ramp L_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,10 +46,10 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
-  alignment: 0
+  spriteMeshType: 0
+  alignment: 6
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
@@ -72,10 +72,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 64
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,7 +126,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Smooth Ramp L_0
+      name: Ramp L_0
       rect:
         serializedVersion: 2
         x: 0
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a84ebdb798387ce70800000000000000
-      internalID: 9135414995656107146
+      spriteID: 686dfef32ee694720800000000000000
+      internalID: 2830915758793414278
       vertices: []
       indices: 
       edges: []
@@ -149,7 +149,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -157,7 +157,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Smooth Ramp L_0: 9135414995656107146
+      Ramp L_0: 2830915758793414278
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
