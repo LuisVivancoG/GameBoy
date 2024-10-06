@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -15,6 +13,8 @@ public class BikeMovement : MonoBehaviour
     [SerializeField] private float _jumpQueueTime = 0.2f;
 
     [SerializeField] private float _boostSpeed;
+    private int _maxBoostCharges = 3;
+    private int _currentCharges;
 
     [SerializeField] private PlayerInput _playerControls;
     private Vector2 _movementInput;
@@ -25,8 +25,10 @@ public class BikeMovement : MonoBehaviour
     private bool _jumpQueued = false;
     private float _jumpQueueTimer = 0f;
 
-    delegate void OnPlayerBoosted();
-    OnPlayerBoosted onPlayerBoosted;
+    public UnityEvent onPlayerBoosted;
+    public UnityEvent onBoostCollected;
+    public UnityEvent onScoring;
+
 
     private void OnEnable()
     {
@@ -35,8 +37,6 @@ public class BikeMovement : MonoBehaviour
 
         _playerControls.actions["A_Button"].started += OnUsingBoost;
         _playerControls.actions["B_Button"].started += OnJump;
-
-        onPlayerBoosted += BoostFunction;
     }
 
     private void OnDisable()
@@ -46,8 +46,6 @@ public class BikeMovement : MonoBehaviour
 
         _playerControls.actions["A_Button"].started -= OnUsingBoost;
         _playerControls.actions["B_Button"].started -= OnJump;
-
-        onPlayerBoosted -= BoostFunction;
     }
 
     // Update is called once per frame
@@ -120,6 +118,34 @@ public class BikeMovement : MonoBehaviour
     }
     void BoostFunction()
     {
-        Debug.Log("Boost used");
+        if (_currentCharges > 0)
+        {
+            Debug.Log("Boost used");
+            _backWheel.AddTorque(-_movementInput.x * _speed * Time.fixedDeltaTime;
+            _currentCharges--;
+        }
+        onPlayerBoosted?.Invoke();
+    }
+    void AddCharge(Collider2D other)
+    {
+        other.gameObject.SetActive(false);
+        _currentCharges++;
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Boost")
+        {
+            if( _currentCharges < _maxBoostCharges )
+            {
+                AddCharge(other);
+                onBoostCollected?.Invoke();
+            }
+        }
+
+        if (other.gameObject.tag == "Collectables")
+        {
+            other.gameObject.SetActive(false);
+            onScoring?.Invoke();
+        }
     }
 }

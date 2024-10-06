@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -10,7 +8,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private UIManager _uiManager;
 
-    private static GameManager _instance;
+    //private static GameManager _instance;
 
     private void OnEnable()
     {
@@ -26,15 +24,15 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if(_instance == null)
-        {
-            _instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        //if(_instance == null)
+        //{
+        //    _instance = this;
+        //    DontDestroyOnLoad(gameObject);
+        //}
+        //else
+        //{
+        //    Destroy(gameObject);
+        //}
     }
 
     /*
