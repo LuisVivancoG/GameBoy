@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 4216912089ceddb41a65739d3ca938f7
   - enabled: 1
-    path: Assets/Scenes/Map Gym.unity
+    path: Assets/Scenes/Level 1.unity
     guid: 4bb53b5d9f855b549a4180ced75e9e13
   - enabled: 1
     path: Assets/Scenes/Level 2.unity
