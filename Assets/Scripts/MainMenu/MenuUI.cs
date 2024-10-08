@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MenuUI : MonoBehaviour
@@ -15,22 +16,18 @@ public class MenuUI : MonoBehaviour
     [SerializeField] float _transition;
     private bool _inputRecieved;
 
+    [SerializeField] private string _nextLevelName;
+
     private void OnEnable()
     {
         _playerControls.actions["Move"].performed += OnMovePerformed;
         _playerControls.actions["Move"].canceled += OnMoveCanceled;
-
-        _playerControls.actions["A_Button"].started += OnAPressed;
-        _playerControls.actions["Start_Button"].started += OnStartPressed;
     }
 
     private void OnDisable()
     {
         _playerControls.actions["Move"].performed -= OnMovePerformed;
         _playerControls.actions["Move"].canceled -= OnMoveCanceled;
-
-        _playerControls.actions["A_Button"].started -= OnAPressed;
-        _playerControls.actions["Start_Button"].started -= OnStartPressed;
     }
 
     // Start is called before the first frame update
@@ -53,23 +50,23 @@ public class MenuUI : MonoBehaviour
     {
         _movementInput = Vector2.zero;
     }
-    private void OnAPressed(InputAction.CallbackContext context)
+    public void OnAPressed(InputAction.CallbackContext context)
     {
-        if (!_inputRecieved)
-        {
-            _inputRecieved = true;
-        }
+        //if (!_inputRecieved)
+        //{
+        //    _inputRecieved = true;
+        //}
 
-        Debug.Log("A Pressed");
+        SceneManager.LoadScene(_nextLevelName);
     }
-    private void OnStartPressed(InputAction.CallbackContext context)
+    public void OnStartPressed(InputAction.CallbackContext context)
     {
-        if (!_inputRecieved)
-        {
-            _inputRecieved = true;
-        }
+        //if (!_inputRecieved)
+        //{
+        //    _inputRecieved = true;
+        //}
 
-        Debug.Log("Start Pressed");
+        SceneManager.LoadScene(_nextLevelName);
     }
 
     IEnumerator WaitForInput()

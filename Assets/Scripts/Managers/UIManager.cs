@@ -1,5 +1,6 @@
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class UIManager : MonoBehaviour
 {
@@ -8,19 +9,31 @@ public class UIManager : MonoBehaviour
     public bool _paused { get; private set; }
 
     [SerializeField] private Image _boostBar;
-    private float _currentBoostAmount;
-    private float _newBoostAmount;
+    public float _reduceSpeed = 0.1f;
+    [SerializeField] private float _restoreAmount = 0.33f;
+    [SerializeField] private float _lerpSpeed = 2f;
 
+    private bool _isButtonHeld = false;
+    public float _targetBoostAmount;
+    [SerializeField] private PlayerInput _playerControls;
+
+    private void OnEnable()
+    {
+    }
     private void Start()
     {
-        _currentBoostAmount = 1f;
-        //_newBoostAmount = 1f;
+        _targetBoostAmount = .15f;
+        _boostBar.fillAmount = _targetBoostAmount;
     }
 
     private void Update()
     {
-        //UpdateChargesHUD();
-        _boostBar.fillAmount = Mathf.Lerp(_currentBoostAmount, _newBoostAmount, (Time.deltaTime));
+        if (_isButtonHeld && _targetBoostAmount > 0)
+        {
+            _targetBoostAmount -= _reduceSpeed * Time.deltaTime;
+            _targetBoostAmount = Mathf.Clamp(_targetBoostAmount, 0f, 1f);
+        }
+        _boostBar.fillAmount = Mathf.Lerp(_boostBar.fillAmount, _targetBoostAmount, Time.deltaTime * _lerpSpeed);
     }
 
     public void TogglePause()
@@ -46,22 +59,20 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void RemoveCharge()
+    public void OnButtonPress(InputAction.CallbackContext context)
     {
-        _newBoostAmount = _newBoostAmount - .10f;
-        //_newBoostAmount = Mathf.Min(_currentBoostAmount, 0f);
-    }
-    public void AddCharge()
-    {
-        _newBoostAmount = _newBoostAmount + .10f;
-        //_newBoostAmount = Mathf.Max(_currentBoostAmount, 1f);
-    }
-    private void UpdateChargesHUD()
-    {
-        if (_currentBoostAmount != _newBoostAmount)
+        if (context.performed)
         {
-            _currentBoostAmount = _newBoostAmount;
-            _boostBar.fillAmount = Mathf.Lerp(_currentBoostAmount, _newBoostAmount, (Time.deltaTime));
+            _isButtonHeld = true;
         }
+        else if (context.canceled)
+        {
+            _isButtonHeld = false;
+        }
+    }
+    public void RestoreBoost()
+    {
+        _targetBoostAmount += _restoreAmount;
+        _targetBoostAmount = Mathf.Clamp(_targetBoostAmount, 0f, 1f);
     }
 }

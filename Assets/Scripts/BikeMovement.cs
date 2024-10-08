@@ -37,6 +37,7 @@ public class BikeMovement : MonoBehaviour
     [SerializeField] private string _nextLevelName;
 
     [SerializeField] private GameObject _exhaust;
+    [SerializeField] private UIManager _uiManager;
 
 
     private void OnEnable()
@@ -101,7 +102,10 @@ public class BikeMovement : MonoBehaviour
     }
     private void OnUsingBoost(InputAction.CallbackContext context)
     {
-        BoostFunction();
+        if (_uiManager._targetBoostAmount > 0 && context.performed)
+        {
+            BoostFunction();
+        }
     }
     private void OnCancelingBoost(InputAction.CallbackContext context)
     {
@@ -135,15 +139,19 @@ public class BikeMovement : MonoBehaviour
     }
     void BoostFunction()
     {
-        if (_currentCharges > 0)
+        if (_uiManager._targetBoostAmount > 0)
         {
-            _bodyBike.AddForce(transform.forward * _boostSpeed, ForceMode2D.Impulse);
-            Debug.Log("Boost used" + ForceMode2D.Impulse);
-            _currentCharges--;
+            onPlayerBoosted?.Invoke();
+            _exhaust.SetActive(true);
+            _bodyBike.velocity = transform.right * _boostSpeed;
+
+            _uiManager._targetBoostAmount -= _uiManager._reduceSpeed * Time.deltaTime;
+            _uiManager._targetBoostAmount = Mathf.Clamp(_uiManager._targetBoostAmount, 0f, 1f);
         }
-        onPlayerBoosted?.Invoke();
-        //_audioManager.Play("Boosting");
-        _exhaust.SetActive(true);
+        else
+        {
+            _exhaust.SetActive(false);
+        }
     }
     void AddCharge(Collider2D other)
     {
@@ -172,7 +180,7 @@ public class BikeMovement : MonoBehaviour
         if (other.gameObject.tag == "Goal")
         {
             StartCoroutine(VictorySequence());
-
+            _audioManager.Play("Goal");
         }
     }
 
