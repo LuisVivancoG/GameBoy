@@ -1,6 +1,8 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class BikeMovement : MonoBehaviour
 {
@@ -28,6 +30,10 @@ public class BikeMovement : MonoBehaviour
     public UnityEvent onPlayerBoosted;
     public UnityEvent onBoostCollected;
     public UnityEvent onScoring;
+
+    [SerializeField] AudioManager _audioManager;
+
+    [SerializeField] private string _nextLevelName;
 
 
     private void OnEnable()
@@ -125,6 +131,7 @@ public class BikeMovement : MonoBehaviour
             _currentCharges--;
         }
         onPlayerBoosted?.Invoke();
+        //_audioManager.Play("Boosting");
     }
     void AddCharge(Collider2D other)
     {
@@ -139,6 +146,7 @@ public class BikeMovement : MonoBehaviour
             {
                 AddCharge(other);
                 onBoostCollected?.Invoke();
+                _audioManager.Play("Boost");
             }
         }
 
@@ -146,6 +154,19 @@ public class BikeMovement : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             onScoring?.Invoke();
+            _audioManager.Play("Coin");
         }
+
+        if (other.gameObject.tag == "Goal")
+        {
+            StartCoroutine(VictorySequence());
+
+        }
+    }
+
+    IEnumerator VictorySequence()
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(_nextLevelName);
     }
 }

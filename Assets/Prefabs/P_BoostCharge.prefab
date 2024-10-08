@@ -43,8 +43,9 @@ GameObject:
   - component: {fileID: 5220045838346353916}
   - component: {fileID: 2863464797335413457}
   - component: {fileID: 8839070413990874403}
+  - component: {fileID: 8848723060308118064}
   m_Layer: 0
-  m_Name: Pack
+  m_Name: Boost
   m_TagString: Boost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -165,3 +166,23 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.6047187, y: 1.1260592}
   m_EdgeRadius: 0
+--- !u!114 &8848723060308118064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4327203495463470476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e86819905cd1fa945add18d18b18e0bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Boost
+  Clip: {fileID: 8300000, guid: cd91778a5ce58394a84ef1b20576d917, type: 3}
+  Volume: 0.5
+  Pitch: 1
+  SpatialBlend: 0
+  Priority: 0
+  Loop: 0
+  PlayOnAwake: 0

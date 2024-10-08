@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Boost
   - Collectables
+  - Goal
   layers:
   - Default
   - TransparentFX
