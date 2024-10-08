@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -35,13 +36,16 @@ public class BikeMovement : MonoBehaviour
 
     [SerializeField] private string _nextLevelName;
 
+    [SerializeField] private GameObject _exhaust;
+
 
     private void OnEnable()
     {
         _playerControls.actions["Move"].performed += OnMovePerformed;
         _playerControls.actions["Move"].canceled += OnMoveCanceled;
 
-        _playerControls.actions["A_Button"].started += OnUsingBoost;
+        _playerControls.actions["A_Button"].performed += OnUsingBoost;
+        _playerControls.actions["A_Button"].canceled += OnCancelingBoost;
         _playerControls.actions["B_Button"].started += OnJump;
     }
 
@@ -50,9 +54,12 @@ public class BikeMovement : MonoBehaviour
         _playerControls.actions["Move"].performed -= OnMovePerformed;
         _playerControls.actions["Move"].canceled -= OnMoveCanceled;
 
-        _playerControls.actions["A_Button"].started -= OnUsingBoost;
+        _playerControls.actions["A_Button"].performed -= OnUsingBoost;
+        _playerControls.actions["A_Button"].canceled -= OnCancelingBoost;
         _playerControls.actions["B_Button"].started -= OnJump;
     }
+
+
 
     // Update is called once per frame
     void Update()
@@ -96,6 +103,10 @@ public class BikeMovement : MonoBehaviour
     {
         BoostFunction();
     }
+    private void OnCancelingBoost(InputAction.CallbackContext context)
+    {
+        _exhaust.SetActive(false);
+    }
     private void OnJump(InputAction.CallbackContext context)
     {
         if (_isGrounded)
@@ -132,6 +143,7 @@ public class BikeMovement : MonoBehaviour
         }
         onPlayerBoosted?.Invoke();
         //_audioManager.Play("Boosting");
+        _exhaust.SetActive(true);
     }
     void AddCharge(Collider2D other)
     {

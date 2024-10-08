@@ -7,16 +7,22 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _levelHUD;
     public bool _paused { get; private set; }
 
-    private int _currentcharges;
-    private int _maxCharges = 3;
-    [SerializeField] private Image[] _chargesBoost;
+    [SerializeField] private Image _boostBar;
+    private float _currentBoostAmount;
+    private float _newBoostAmount;
 
-    private void Awake()
+    private void Start()
     {
-        //GameObject canvas = GameObject.Find("Canvas");
-        //Transform childTransform = canvas.transform.Find("PauseUI");
-        //_pauseMenu = childTransform.gameObject;
+        _currentBoostAmount = 1f;
+        //_newBoostAmount = 1f;
     }
+
+    private void Update()
+    {
+        //UpdateChargesHUD();
+        _boostBar.fillAmount = Mathf.Lerp(_currentBoostAmount, _newBoostAmount, (Time.deltaTime));
+    }
+
     public void TogglePause()
     {
         if(_pauseMenu != null)
@@ -42,27 +48,20 @@ public class UIManager : MonoBehaviour
 
     public void RemoveCharge()
     {
-        if (_currentcharges > 0)
-        {
-            _currentcharges--;
-            UpdateChargesHUD();
-        }
+        _newBoostAmount = _newBoostAmount - .10f;
+        //_newBoostAmount = Mathf.Min(_currentBoostAmount, 0f);
     }
     public void AddCharge()
     {
-        if (_currentcharges < _maxCharges)
-        {
-            _currentcharges++;
-            UpdateChargesHUD();
-        }
+        _newBoostAmount = _newBoostAmount + .10f;
+        //_newBoostAmount = Mathf.Max(_currentBoostAmount, 1f);
     }
-
     private void UpdateChargesHUD()
     {
-        //Debug.Log("Event Called");
-        for (int i = 0; i < _chargesBoost.Length; i++)
+        if (_currentBoostAmount != _newBoostAmount)
         {
-            _chargesBoost[i].enabled = (i < _currentcharges);
+            _currentBoostAmount = _newBoostAmount;
+            _boostBar.fillAmount = Mathf.Lerp(_currentBoostAmount, _newBoostAmount, (Time.deltaTime));
         }
     }
 }

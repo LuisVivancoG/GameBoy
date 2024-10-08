@@ -327,39 +327,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6993366401768202716, guid: b21dc94eaf5f4cd4ebb9d6db8be9d699, type: 3}
   m_PrefabInstance: {fileID: 17963751}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &17963754 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9102100653649161529, guid: b21dc94eaf5f4cd4ebb9d6db8be9d699, type: 3}
-  m_PrefabInstance: {fileID: 17963751}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &17963755 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5210966434243068849, guid: b21dc94eaf5f4cd4ebb9d6db8be9d699, type: 3}
-  m_PrefabInstance: {fileID: 17963751}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &17963756 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 603487424921391924, guid: b21dc94eaf5f4cd4ebb9d6db8be9d699, type: 3}
-  m_PrefabInstance: {fileID: 17963751}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &17963757 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4738892521139584791, guid: b21dc94eaf5f4cd4ebb9d6db8be9d699, type: 3}
@@ -2471,55 +2438,55 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3878804737103390285, guid: e82289b5a43b5544ab73c609e6c6aa32, type: 3}
+    - target: {fileID: 8611234956736851277, guid: 70470919bd12d3340b654cebf5c376d6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 43.19
       objectReference: {fileID: 0}
-    - target: {fileID: 3878804737103390285, guid: e82289b5a43b5544ab73c609e6c6aa32, type: 3}
+    - target: {fileID: 8611234956736851277, guid: 70470919bd12d3340b654cebf5c376d6, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.08
       objectReference: {fileID: 0}
-    - target: {fileID: 3878804737103390285, guid: e82289b5a43b5544ab73c609e6c6aa32, type: 3}
+    - target: {fileID: 8611234956736851277, guid: 70470919bd12d3340b654cebf5c376d6, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3878804737103390285, guid: e82289b5a43b5544ab73c609e6c6aa32, type: 3}
+    - target: {fileID: 8611234956736851277, guid: 70470919bd12d3340b654cebf5c376d6, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.70710796
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3878804737103390285, guid: e82289b5a43b5544ab73c609e6c6aa32, type: 3}
+    - target: {fileID: 8611234956736851277, guid: 70470919bd12d3340b654cebf5c376d6, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3878804737103390285, guid: e82289b5a43b5544ab73c609e6c6aa32, type: 3}
+    - target: {fileID: 8611234956736851277, guid: 70470919bd12d3340b654cebf5c376d6, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3878804737103390285, guid: e82289b5a43b5544ab73c609e6c6aa32, type: 3}
+    - target: {fileID: 8611234956736851277, guid: 70470919bd12d3340b654cebf5c376d6, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.7071057
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3878804737103390285, guid: e82289b5a43b5544ab73c609e6c6aa32, type: 3}
+    - target: {fileID: 8611234956736851277, guid: 70470919bd12d3340b654cebf5c376d6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3878804737103390285, guid: e82289b5a43b5544ab73c609e6c6aa32, type: 3}
+    - target: {fileID: 8611234956736851277, guid: 70470919bd12d3340b654cebf5c376d6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3878804737103390285, guid: e82289b5a43b5544ab73c609e6c6aa32, type: 3}
+    - target: {fileID: 8611234956736851277, guid: 70470919bd12d3340b654cebf5c376d6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7400561036917783863, guid: e82289b5a43b5544ab73c609e6c6aa32, type: 3}
+    - target: {fileID: 6225269225762910867, guid: 70470919bd12d3340b654cebf5c376d6, type: 3}
       propertyPath: m_Name
-      value: P_Goal
+      value: Flag
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e82289b5a43b5544ab73c609e6c6aa32, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 70470919bd12d3340b654cebf5c376d6, type: 3}
 --- !u!1001 &529518048
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4077,15 +4044,15 @@ PrefabInstance:
     - target: {fileID: 3029090344278484232, guid: 8caf981c57f991f478cd99f6c1d2a30d, type: 3}
       propertyPath: '_chargesBoost.Array.data[0]'
       value: 
-      objectReference: {fileID: 17963756}
+      objectReference: {fileID: 0}
     - target: {fileID: 3029090344278484232, guid: 8caf981c57f991f478cd99f6c1d2a30d, type: 3}
       propertyPath: '_chargesBoost.Array.data[1]'
       value: 
-      objectReference: {fileID: 17963755}
+      objectReference: {fileID: 0}
     - target: {fileID: 3029090344278484232, guid: 8caf981c57f991f478cd99f6c1d2a30d, type: 3}
       propertyPath: '_chargesBoost.Array.data[2]'
       value: 
-      objectReference: {fileID: 17963754}
+      objectReference: {fileID: 0}
     - target: {fileID: 3789909995754021010, guid: 8caf981c57f991f478cd99f6c1d2a30d, type: 3}
       propertyPath: _timerTxt
       value: 
