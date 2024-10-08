@@ -294,6 +294,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b21dc94eaf5f4cd4ebb9d6db8be9d699, type: 3}
+--- !u!114 &51301216 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6419194542618583173, guid: b21dc94eaf5f4cd4ebb9d6db8be9d699, type: 3}
+  m_PrefabInstance: {fileID: 51301215}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &53264550
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -449,17 +460,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6582712466845932831, guid: e2dc5f93f03249c43bfb6b485288b656, type: 3}
   m_PrefabInstance: {fileID: 59683781}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &81978791 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4557166590842651405, guid: b21dc94eaf5f4cd4ebb9d6db8be9d699, type: 3}
-  m_PrefabInstance: {fileID: 51301215}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &91759888
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -881,6 +881,10 @@ PrefabInstance:
       propertyPath: _character
       value: 
       objectReference: {fileID: 1181222064}
+    - target: {fileID: 1727428085004073901, guid: 051824f7eb70a7240927116ea9d5f4c5, type: 3}
+      propertyPath: orthographic size
+      value: 3.66
+      objectReference: {fileID: 0}
     - target: {fileID: 6040651959929720632, guid: 051824f7eb70a7240927116ea9d5f4c5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.389913
@@ -2015,7 +2019,7 @@ PrefabInstance:
     - target: {fileID: 3789909995754021010, guid: 8caf981c57f991f478cd99f6c1d2a30d, type: 3}
       propertyPath: _timerTxt
       value: 
-      objectReference: {fileID: 81978791}
+      objectReference: {fileID: 51301216}
     - target: {fileID: 3789909995754021010, guid: 8caf981c57f991f478cd99f6c1d2a30d, type: 3}
       propertyPath: _scoreText
       value: 
